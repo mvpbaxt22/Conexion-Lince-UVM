@@ -5,58 +5,97 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Conexión Lince</title>
+    <meta
+        name="theme-color"
+        content="#df202b">
+
+    <meta
+        name="description"
+        content="Conexión Lince UVM">
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes">
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default">
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="Conexión Lince">
+
+    <link
+        rel="manifest"
+        href="manifest.json">
+
+    <link
+        rel="apple-touch-icon"
+        href="img/icon-192.png">
+
+    <title>Conexión Lince UVM</title>
 
 
     <style>
-
-        /* =====================================================
-           CONFIGURACIÓN GENERAL
-        ===================================================== */
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
+
 
         body {
-            background: #ffffff;
-            color: #11101d;
 
             font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
                 Arial,
-                Helvetica,
                 sans-serif;
 
+            background: #ffffff;
+
+            color: #11101d;
+
             min-height: 100vh;
+
+            overscroll-behavior: none;
         }
+
 
         button {
+
             border: none;
+
             background: none;
-            cursor: pointer;
+
             color: inherit;
+
+            font-family: inherit;
+
+            cursor: pointer;
         }
 
 
-        /* =====================================================
-           APLICACIÓN
-        ===================================================== */
-
         .app {
+
             width: 100%;
+
             max-width: 430px;
+
             min-height: 100vh;
 
             margin: auto;
 
             background: #ffffff;
 
-            padding-bottom: 110px;
+            padding-bottom: 100px;
         }
 
 
@@ -65,13 +104,16 @@
         ===================================================== */
 
         .screen {
+
             display: none;
 
             min-height:
-                calc(100vh - 110px);
+                calc(100vh - 100px);
         }
 
+
         .screen.active {
+
             display: block;
         }
 
@@ -81,24 +123,24 @@
         ===================================================== */
 
         .header {
+
             height: 105px;
+
+            padding:
+                25px
+                32px
+                10px;
 
             display: flex;
 
             align-items: center;
 
             justify-content: space-between;
-
-            padding:
-                25px
-                32px
-                10px;
         }
 
 
-        /* LOGO */
-
         .logo {
+
             color: #df1f2d;
 
             font-size: 49px;
@@ -111,9 +153,8 @@
         }
 
 
-        /* ACCIONES */
-
         .header-actions {
+
             display: flex;
 
             align-items: center;
@@ -127,28 +168,34 @@
         ===================================================== */
 
         .notification {
-            position: relative;
 
             width: 42px;
+
             height: 48px;
+
+            position: relative;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
         }
 
 
         .bell {
-            position: relative;
 
             width: 25px;
+
             height: 29px;
+
+            position: relative;
 
             border:
                 4px solid #11101d;
 
             border-top-left-radius: 16px;
+
             border-top-right-radius: 16px;
 
             border-bottom: 0;
@@ -156,16 +203,19 @@
 
 
         .bell::before {
+
             content: "";
 
             position: absolute;
 
             width: 33px;
+
             height: 4px;
 
             background: #11101d;
 
             bottom: -3px;
+
             left: -8px;
 
             border-radius: 5px;
@@ -173,11 +223,13 @@
 
 
         .bell::after {
+
             content: "";
 
             position: absolute;
 
             width: 7px;
+
             height: 7px;
 
             background: #11101d;
@@ -185,43 +237,49 @@
             border-radius: 50%;
 
             bottom: -11px;
+
             left: 6px;
         }
 
 
-        /* PUNTO ROJO */
-
         .notification-dot {
+
             position: absolute;
 
             width: 16px;
+
             height: 16px;
 
-            background: #df1f2d;
+            background: #df202b;
 
             border-radius: 50%;
 
             top: 1px;
+
             right: 0;
         }
 
 
         /* =====================================================
-           FOTO DE PERFIL
+           FOTO PERFIL
         ===================================================== */
 
         .profile-label {
-            display: block;
 
             width: 62px;
+
             height: 62px;
+
+            display: block;
 
             cursor: pointer;
         }
 
 
         .profile {
+
             width: 62px;
+
             height: 62px;
 
             border-radius: 50%;
@@ -229,32 +287,24 @@
             object-fit: cover;
 
             border:
-                4px solid #df1f2d;
+                4px solid #df202b;
 
             display: block;
-
-            transition: 0.2s;
         }
 
-
-        .profile:hover {
-            transform: scale(1.05);
-        }
-
-
-        /* INPUT FOTO PERFIL */
 
         #profileInput {
+
             display: none;
         }
 
 
-
         /* =====================================================
-           CONTENIDO HOME
+           HOME
         ===================================================== */
 
         .content {
+
             padding:
                 17px
                 33px
@@ -262,9 +312,8 @@
         }
 
 
-        /* SALUDO */
-
         .greeting {
+
             font-size: 30px;
 
             font-weight: 400;
@@ -276,16 +325,17 @@
 
 
         .greeting strong {
+
             font-weight: 800;
         }
 
 
-
         /* =====================================================
-           TARJETA ESTUDIANTE
+           TARJETA ALUMNO
         ===================================================== */
 
         .student-card {
+
             border:
                 2px solid #dddddf;
 
@@ -297,12 +347,11 @@
                 31px;
 
             margin-bottom: 32px;
-
-            background: #ffffff;
         }
 
 
         .student-card h2 {
+
             font-size: 25px;
 
             line-height: 1.2;
@@ -314,11 +363,11 @@
 
 
         .student-card p {
+
             font-size: 19px;
 
             line-height: 1.3;
         }
-
 
 
         /* =====================================================
@@ -326,6 +375,7 @@
         ===================================================== */
 
         .notice {
+
             background: #def2ff;
 
             border:
@@ -346,6 +396,7 @@
 
 
         .notice p {
+
             font-size: 19px;
 
             line-height: 1.35;
@@ -353,17 +404,16 @@
 
 
         .notice strong {
+
             font-weight: 800;
         }
 
 
-
         /* =====================================================
-           TARJETAS
+           CARDS
         ===================================================== */
 
         .card {
-            background: #ffffff;
 
             border:
                 2px solid #dddddf;
@@ -379,6 +429,7 @@
 
 
         .card-header {
+
             display: flex;
 
             align-items: center;
@@ -390,6 +441,7 @@
 
 
         .card-header h2 {
+
             font-size: 27px;
 
             font-weight: 800;
@@ -397,11 +449,9 @@
 
 
         .arrow {
+
             font-size: 43px;
-
-            line-height: 1;
         }
-
 
 
         /* =====================================================
@@ -409,6 +459,7 @@
         ===================================================== */
 
         .date {
+
             font-size: 21px;
 
             font-weight: 800;
@@ -418,6 +469,7 @@
 
 
         .class-card {
+
             background: #ea7c83;
 
             border-radius: 18px;
@@ -435,6 +487,7 @@
 
 
         .class-name {
+
             font-size: 21px;
 
             font-weight: 800;
@@ -442,6 +495,7 @@
 
 
         .class-info {
+
             font-size: 19px;
 
             font-weight: 700;
@@ -450,24 +504,23 @@
         }
 
 
-
         /* =====================================================
-           AVANCE ACADÉMICO
+           AVANCE
         ===================================================== */
 
         .stats {
+
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
             text-align: center;
-
-            gap: 5px;
         }
 
 
         .stat {
+
             display: flex;
 
             flex-direction: column;
@@ -477,6 +530,7 @@
 
 
         .stat-number {
+
             font-size: 33px;
 
             font-weight: 800;
@@ -486,20 +540,19 @@
 
 
         .stat-label {
+
             font-size: 17px;
 
             line-height: 1.15;
         }
 
 
-
         /* =====================================================
-           =====================================================
            CREDENCIAL
-           =====================================================
         ===================================================== */
 
         #credencial {
+
             padding:
                 25px
                 25px
@@ -507,29 +560,24 @@
         }
 
 
-        /* BOTÓN REGRESAR */
-
         .back-button {
+
             font-size: 42px;
 
             margin-bottom: 25px;
-
-            display: block;
         }
 
 
-        /* TÍTULO */
-
         .credential-title {
+
             font-size: 32px;
 
             margin-bottom: 25px;
         }
 
 
-        /* CONTENEDOR */
-
         .credential-container {
+
             width: 100%;
 
             display: flex;
@@ -538,11 +586,8 @@
         }
 
 
-        /* =====================================================
-           SIN CREDENCIAL
-        ===================================================== */
-
         .empty-credential {
+
             width: 100%;
 
             min-height: 500px;
@@ -569,6 +614,7 @@
 
 
         .empty-icon {
+
             font-size: 60px;
 
             margin-bottom: 20px;
@@ -576,6 +622,7 @@
 
 
         .empty-credential p {
+
             font-size: 18px;
 
             line-height: 1.4;
@@ -584,11 +631,8 @@
         }
 
 
-        /* =====================================================
-           BOTÓN SUBIR
-        ===================================================== */
-
         .upload-button {
+
             display: inline-block;
 
             background: #df202b;
@@ -606,28 +650,17 @@
             font-weight: 700;
 
             cursor: pointer;
-
-            transition: 0.2s;
         }
 
-
-        .upload-button:hover {
-            background: #c91925;
-        }
-
-
-        /* INPUT CREDENCIAL */
 
         #credentialInput {
+
             display: none;
         }
 
 
-        /* =====================================================
-           IMAGEN CREDENCIAL
-        ===================================================== */
-
         #credentialImage {
+
             display: none;
 
             width: 100%;
@@ -642,15 +675,12 @@
 
             box-shadow:
                 0 4px 15px
-                rgba(0, 0, 0, 0.12);
+                rgba(0,0,0,.12);
         }
 
 
-        /* =====================================================
-           CAMBIAR CREDENCIAL
-        ===================================================== */
-
         .change-credential {
+
             display: none;
 
             margin:
@@ -660,9 +690,7 @@
 
             background: #df202b;
 
-            color: #ffffff;
-
-            border: none;
+            color: white;
 
             padding:
                 13px
@@ -673,10 +701,7 @@
             font-size: 16px;
 
             font-weight: 700;
-
-            cursor: pointer;
         }
-
 
 
         /* =====================================================
@@ -684,22 +709,23 @@
         ===================================================== */
 
         .bottom-nav {
+
             position: fixed;
+
+            bottom: 0;
 
             left: 50%;
 
             transform:
                 translateX(-50%);
 
-            bottom: 0;
-
             width: 100%;
 
             max-width: 430px;
 
-            height: 110px;
+            height: 100px;
 
-            background: #ffffff;
+            background: white;
 
             border-top:
                 1px solid #d9d9d9;
@@ -714,6 +740,7 @@
 
 
         .nav-item {
+
             display: flex;
 
             flex-direction: column;
@@ -722,30 +749,67 @@
 
             justify-content: center;
 
-            gap: 10px;
+            gap: 8px;
 
-            color: #666666;
+            color: #666;
         }
 
 
         .nav-icon {
-            font-size: 33px;
+
+            font-size: 30px;
 
             line-height: 1;
-
-            font-weight: 700;
         }
 
 
         .nav-text {
-            font-size: 17px;
+
+            font-size: 15px;
         }
 
 
         .nav-item.active {
-            color: #df1f2d;
+
+            color: #df202b;
         }
 
+
+        /* =====================================================
+           MENSAJE INSTALACIÓN
+        ===================================================== */
+
+        .install-button {
+
+            display: none;
+
+            position: fixed;
+
+            bottom: 115px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: calc(100% - 40px);
+
+            max-width: 390px;
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            background: #11101d;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            z-index: 200;
+        }
 
 
         /* =====================================================
@@ -754,46 +818,57 @@
 
         @media (max-width: 380px) {
 
-            .content {
+            .header {
+
                 padding-left: 22px;
+
                 padding-right: 22px;
             }
 
 
-            .header {
+            .content {
+
                 padding-left: 22px;
+
                 padding-right: 22px;
             }
 
 
             #credencial {
+
                 padding-left: 22px;
+
                 padding-right: 22px;
             }
 
 
             .greeting {
+
                 font-size: 26px;
             }
 
 
             .student-card h2 {
+
                 font-size: 22px;
             }
 
 
             .student-card p,
             .notice p {
+
                 font-size: 17px;
             }
 
 
             .stat-number {
+
                 font-size: 27px;
             }
 
 
             .stat-label {
+
                 font-size: 14px;
             }
 
@@ -811,9 +886,7 @@
 
 
     <!-- =====================================================
-         =====================================================
-         PÁGINA DE INICIO
-         =====================================================
+         HOME
     ===================================================== -->
 
     <section
@@ -821,12 +894,8 @@
         class="screen active">
 
 
-        <!-- HEADER -->
-
         <header class="header">
 
-
-            <!-- LOGO -->
 
             <div class="logo">
                 UVM
@@ -835,8 +904,6 @@
 
             <div class="header-actions">
 
-
-                <!-- CAMPANA -->
 
                 <button class="notification">
 
@@ -847,8 +914,6 @@
                 </button>
 
 
-                <!-- FOTO DE PERFIL -->
-
                 <label
                     for="profileInput"
                     class="profile-label">
@@ -856,13 +921,11 @@
                     <img
                         id="headerProfile"
                         class="profile"
-                        src="https://i.pravatar.cc/150?img=12"
+                        src="img/profile-default.png"
                         alt="Foto de perfil">
 
                 </label>
 
-
-                <!-- INPUT FOTO PERFIL -->
 
                 <input
                     type="file"
@@ -874,13 +937,8 @@
         </header>
 
 
-
-        <!-- CONTENIDO -->
-
         <main class="content">
 
-
-            <!-- SALUDO -->
 
             <h1 class="greeting">
 
@@ -892,8 +950,6 @@
 
             </h1>
 
-
-            <!-- INFORMACIÓN -->
 
             <div class="student-card">
 
@@ -908,8 +964,6 @@
 
             </div>
 
-
-            <!-- AVISO -->
 
             <div class="notice">
 
@@ -928,10 +982,6 @@
 
             </div>
 
-
-            <!-- =================================================
-                 AGENDA
-            ================================================== -->
 
             <div class="card">
 
@@ -969,10 +1019,6 @@
 
             </div>
 
-
-            <!-- =================================================
-                 AVANCE ACADÉMICO
-            ================================================== -->
 
             <div class="card">
 
@@ -1047,17 +1093,13 @@
 
 
     <!-- =====================================================
-         =====================================================
-         PÁGINA DE CREDENCIAL
-         =====================================================
+         CREDENCIAL
     ===================================================== -->
 
     <section
         id="credencial"
         class="screen">
 
-
-        <!-- REGRESAR -->
 
         <button
             class="back-button"
@@ -1068,16 +1110,10 @@
         </button>
 
 
-        <!-- TÍTULO -->
-
         <h1 class="credential-title">
-
             Credencial
-
         </h1>
 
-
-        <!-- INPUT -->
 
         <input
             type="file"
@@ -1085,12 +1121,8 @@
             accept="image/*">
 
 
-        <!-- CONTENEDOR -->
-
         <div class="credential-container">
 
-
-            <!-- SIN FOTO -->
 
             <div
                 id="emptyCredential"
@@ -1103,11 +1135,9 @@
 
 
                 <p>
-
                     Agrega la foto de tu
-                    credencial para visualizarla
-                    aquí.
-
+                    credencial para
+                    visualizarla aquí.
                 </p>
 
 
@@ -1123,16 +1153,12 @@
             </div>
 
 
-            <!-- FOTO DE LA CREDENCIAL -->
-
             <img
                 id="credentialImage"
                 alt="Mi credencial">
 
         </div>
 
-
-        <!-- CAMBIAR CREDENCIAL -->
 
         <button
             id="changeCredential"
@@ -1148,15 +1174,11 @@
 
 
     <!-- =====================================================
-         =====================================================
          BARRA INFERIOR
-         =====================================================
     ===================================================== -->
 
     <nav class="bottom-nav">
 
-
-        <!-- HOME -->
 
         <button
             class="nav-item active"
@@ -1174,8 +1196,6 @@
         </button>
 
 
-        <!-- CREDENCIAL -->
-
         <button
             class="nav-item"
             data-section="credencial"
@@ -1192,8 +1212,6 @@
         </button>
 
 
-        <!-- CAE -->
-
         <button
             class="nav-item"
             data-section="cae"
@@ -1209,8 +1227,6 @@
 
         </button>
 
-
-        <!-- MENÚ -->
 
         <button
             class="nav-item"
@@ -1230,6 +1246,20 @@
 
     </nav>
 
+
+    <!-- =====================================================
+         BOTÓN INSTALAR
+    ===================================================== -->
+
+    <button
+        id="installButton"
+        class="install-button">
+
+        Instalar Conexión Lince
+
+    </button>
+
+
 </div>
 
 
@@ -1238,54 +1268,62 @@
 
 
     /* =====================================================
-       CAMBIAR DE PÁGINA
+       NAVEGACIÓN
     ===================================================== */
 
     function showSection(sectionId) {
 
 
-        /* Ocultar todas las pantallas */
-
         const screens =
             document.querySelectorAll(".screen");
 
 
-        screens.forEach(function(screen) {
+        screens.forEach(
+            function(screen) {
 
-            screen.classList.remove("active");
+                screen.classList.remove(
+                    "active"
+                );
 
-        });
+            }
+        );
 
-
-        /* Mostrar la pantalla seleccionada */
 
         const selectedScreen =
-            document.getElementById(sectionId);
+            document.getElementById(
+                sectionId
+            );
 
 
         if (selectedScreen) {
 
-            selectedScreen.classList.add("active");
+            selectedScreen.classList.add(
+                "active"
+            );
 
         }
 
 
-        /* Cambiar botón activo */
-
         const navItems =
-            document.querySelectorAll(".nav-item");
+            document.querySelectorAll(
+                ".nav-item"
+            );
 
 
-        navItems.forEach(function(item) {
+        navItems.forEach(
+            function(item) {
 
-            item.classList.remove("active");
+                item.classList.remove(
+                    "active"
+                );
 
-        });
+            }
+        );
 
 
         const activeItem =
             document.querySelector(
-                '.nav-item[data-section="' +
+                '[data-section="' +
                 sectionId +
                 '"]'
             );
@@ -1293,29 +1331,24 @@
 
         if (activeItem) {
 
-            activeItem.classList.add("active");
+            activeItem.classList.add(
+                "active"
+            );
 
         }
 
 
-        /* Regresar arriba */
-
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-
-        });
+        window.scrollTo(
+            0,
+            0
+        );
 
     }
 
 
 
     /* =====================================================
-       =====================================================
        FOTO DE PERFIL
-       =====================================================
     ===================================================== */
 
     const profileInput =
@@ -1329,8 +1362,6 @@
             "headerProfile"
         );
 
-
-    /* CARGAR FOTO DE PERFIL GUARDADA */
 
     const savedProfile =
         localStorage.getItem(
@@ -1346,8 +1377,6 @@
     }
 
 
-    /* SELECCIONAR FOTO */
-
     profileInput.addEventListener(
         "change",
         function(event) {
@@ -1358,13 +1387,9 @@
 
 
             if (!file) {
-
                 return;
-
             }
 
-
-            /* Comprobar que sea imagen */
 
             if (
                 !file.type.startsWith(
@@ -1381,8 +1406,6 @@
             }
 
 
-            /* Leer imagen */
-
             const reader =
                 new FileReader();
 
@@ -1390,18 +1413,13 @@
             reader.onload =
                 function(e) {
 
-
                     const image =
                         e.target.result;
 
 
-                    /* Mostrar */
-
                     headerProfile.src =
                         image;
 
-
-                    /* Guardar */
 
                     localStorage.setItem(
                         "profileImage",
@@ -1419,9 +1437,7 @@
 
 
     /* =====================================================
-       =====================================================
-       FOTO DE CREDENCIAL
-       =====================================================
+       CREDENCIAL
     ===================================================== */
 
     const credentialInput =
@@ -1448,10 +1464,6 @@
         );
 
 
-    /* =====================================================
-       CARGAR CREDENCIAL GUARDADA
-    ===================================================== */
-
     const savedCredential =
         localStorage.getItem(
             "credentialImage"
@@ -1460,29 +1472,20 @@
 
     if (savedCredential) {
 
-
         credentialImage.src =
             savedCredential;
-
 
         credentialImage.style.display =
             "block";
 
-
         emptyCredential.style.display =
             "none";
-
 
         changeCredential.style.display =
             "block";
 
     }
 
-
-
-    /* =====================================================
-       SELECCIONAR CREDENCIAL
-    ===================================================== */
 
     credentialInput.addEventListener(
         "change",
@@ -1494,13 +1497,9 @@
 
 
             if (!file) {
-
                 return;
-
             }
 
-
-            /* Comprobar imagen */
 
             if (
                 !file.type.startsWith(
@@ -1517,8 +1516,6 @@
             }
 
 
-            /* Leer imagen */
-
             const reader =
                 new FileReader();
 
@@ -1526,12 +1523,9 @@
             reader.onload =
                 function(e) {
 
-
                     const image =
                         e.target.result;
 
-
-                    /* Mostrar imagen */
 
                     credentialImage.src =
                         image;
@@ -1541,19 +1535,13 @@
                         "block";
 
 
-                    /* Ocultar mensaje */
-
                     emptyCredential.style.display =
                         "none";
 
 
-                    /* Mostrar botón */
-
                     changeCredential.style.display =
                         "block";
 
-
-                    /* Guardar */
 
                     localStorage.setItem(
                         "credentialImage",
@@ -1569,16 +1557,137 @@
     );
 
 
-
-    /* =====================================================
-       CAMBIAR CREDENCIAL
-    ===================================================== */
-
     changeCredential.addEventListener(
         "click",
         function() {
 
             credentialInput.click();
+
+        }
+    );
+
+
+
+    /* =====================================================
+       SERVICE WORKER
+    ===================================================== */
+
+    if (
+        "serviceWorker"
+        in navigator
+    ) {
+
+        window.addEventListener(
+            "load",
+            function() {
+
+                navigator.serviceWorker
+                    .register(
+                        "sw.js"
+                    )
+                    .then(
+                        function() {
+
+                            console.log(
+                                "Conexión Lince: PWA activa"
+                            );
+
+                        }
+                    )
+                    .catch(
+                        function(error) {
+
+                            console.log(
+                                "Error PWA:",
+                                error
+                            );
+
+                        }
+                    );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       INSTALACIÓN PWA
+    ===================================================== */
+
+    let deferredPrompt = null;
+
+
+    const installButton =
+        document.getElementById(
+            "installButton"
+        );
+
+
+    window.addEventListener(
+        "beforeinstallprompt",
+        function(event) {
+
+
+            event.preventDefault();
+
+
+            deferredPrompt =
+                event;
+
+
+            installButton.style.display =
+                "block";
+
+        }
+    );
+
+
+    installButton.addEventListener(
+        "click",
+        async function() {
+
+
+            if (!deferredPrompt) {
+                return;
+            }
+
+
+            deferredPrompt.prompt();
+
+
+            const result =
+                await deferredPrompt
+                    .userChoice;
+
+
+            console.log(
+                "Instalación:",
+                result.outcome
+            );
+
+
+            deferredPrompt = null;
+
+
+            installButton.style.display =
+                "none";
+
+        }
+    );
+
+
+    window.addEventListener(
+        "appinstalled",
+        function() {
+
+            installButton.style.display =
+                "none";
+
+            console.log(
+                "Conexión Lince instalada"
+            );
 
         }
     );
